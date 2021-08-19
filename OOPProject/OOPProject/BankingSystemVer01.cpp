@@ -1,3 +1,5 @@
+#define _CRT_SECURE_NO_WARNINGS
+
 #include <iostream>
 #include <cstdlib>
 
@@ -57,16 +59,16 @@ void ShowMenu()
 	std::cout << "-----Menu-----\n";
 	std::cout << "1. 계좌개설\n";
 	std::cout << "2. 입 금\n";
-	std::cout << "3.출 금\n";
-	std::cout << "4.계좌정보 전체 출력\n";
-	std::cout << "5.프로그램 종료\n";
+	std::cout << "3. 출 금\n";
+	std::cout << "4. 계좌정보 전체 출력\n";
+	std::cout << "5. 프로그램 종료\n";
 }
 
 void MakeAccount()
 {
 	int accnum, balance;
 	char name[10];
-	std::cout << "[입   금]\n";
+	std::cout << "[계 좌 개 설]\n";
 	std::cout << "계좌ID: ";
 	std::cin >> accnum;
 	std::cout << "이름: ";
@@ -77,16 +79,16 @@ void MakeAccount()
 	accarr[acccnt].accID = accnum;
 	accarr[acccnt].balance = balance;
 	strcpy(accarr[acccnt].name, name);
-	accnum++;
+	acccnt++;
 }
 
-void DesposiMoney()
+void DepositMoney()
 {
 	int accnum, money;
 	std::cout << "[입   금]\n";
-	std::cout << "계좌ID: \n";
+	std::cout << "계좌ID: ";
 	std::cin >> accnum;
-	std::cout << "입금액: \n";
+	std::cout << "입금액: ";
 	std::cin >> money;
 	
 	for (int i = 0; i <= acccnt; i++)
@@ -133,6 +135,6 @@ void ShowAllAccInfo()
 	{
 		std::cout << "계좌ID: " << accarr[i].accID << '\n';
 		std::cout << "이 름: " << accarr[i].name << '\n';
-		std::cout << "잔 액: " << accarr[i].balance << '\n\n';
+		std::cout << "잔 액: " << accarr[i].balance << "\n\n";
 	}
 }
