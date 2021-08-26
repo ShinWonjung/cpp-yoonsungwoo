@@ -105,5 +105,6 @@ int main()
 	cout << "문자열 입력: ";
 	cin >> str4;
 	cout << "입력한 문자열: " << str4 << endl;
+
 	return 0;
 }
